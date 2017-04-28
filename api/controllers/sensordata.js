@@ -2,6 +2,14 @@ var mongoose = require('mongoose');
 var Sensordata = mongoose.model('Sensordata');
 var request = require("request");
 
+module.exports.getData = function (req, res) {
+    Sensordata.find().exec(function (err, data) {
+        if (err) return res.send(err);
+        res.json(data);
+    });
+
+};
+
 
 module.exports.addData = function (req, res) {
 

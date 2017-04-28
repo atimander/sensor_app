@@ -4,8 +4,11 @@
 var mongoose = require('mongoose');
 
 var schema = new mongoose.Schema({
-    time: String,
-    temperature: String
+    time: Date,
+    temperature: Number,
+    humidity: Number,
+    light: Number,
+    pir: Number
 });
 
 mongoose.model('Sensordata', schema, 'sensordata');
